@@ -15,3 +15,9 @@ function generatePin() {
     document.getElementById('display-pin').value = pin;
     console.log(pin);
 }
+
+//Keypad
+
+document.getElementById('keypad').addEventListener("click", function() {
+
+});
