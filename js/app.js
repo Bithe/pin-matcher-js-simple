@@ -18,10 +18,21 @@ function generatePin() {
 
 //Keypad
 document.getElementById('keypad').addEventListener("click", function(event) {
+
     console.log(event.target.innerText);
     const number = event.target.innerText;
-    const calcInput = document.getElementById('typed-numbers').value;
-    const previousNumber = calcInput.value;
-    const newNumber = previousNumber + number;
+
+    //check
+    if (isNaN(number)) {
+        if (number == 'C') {
+            calcInput.value = '';
+        }
+    } else {
+        const calcInput = document.getElementById('typed-numbers');
+        const previousNumber = calcInput.value;
+        const newNumber = previousNumber + number;
+        calcInput.value = newNumber;
+    }
+
 
 });
