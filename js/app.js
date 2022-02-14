@@ -17,7 +17,11 @@ function generatePin() {
 }
 
 //Keypad
-
-document.getElementById('keypad').addEventListener("click", function() {
+document.getElementById('keypad').addEventListener("click", function(event) {
+    console.log(event.target.innerText);
+    const number = event.target.innerText;
+    const calcInput = document.getElementById('typed-numbers').value;
+    const previousNumber = calcInput.value;
+    const newNumber = previousNumber + number;
 
 });
