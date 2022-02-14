@@ -6,7 +6,6 @@ function getPin() {
     } else {
         console.log("Got 3 digit", pin);
         return getPin();
-
     }
 }
 
@@ -28,11 +27,22 @@ document.getElementById('keypad').addEventListener("click", function(event) {
             calcInput.value = '';
         }
     } else {
-
         const previousNumber = calcInput.value;
         const newNumber = previousNumber + number;
         calcInput.value = newNumber;
     }
-
-
 });
+
+//Verify pin
+
+function verifyPin() {
+    const genratedPin = document.getElementById('display-pin');
+    const typedPin = document.getElementById('typed-numbers');
+
+    if (generatePin == typedPin) {
+        const failError = document.getElementById('notify-success');
+        failError.style.display = 'block';
+    } else {
+
+    }
+}
