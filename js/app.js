@@ -1,8 +1,8 @@
 function getPin() {
-
+    const pin = Math.round(Math.random() * 10000);
 }
 
 function generatePin() {
-    const pin = Math.round(Math.random() * 10000);
+    getPin();
     console.log(pin);
 }
