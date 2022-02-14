@@ -17,7 +17,6 @@ function generatePin() {
 
 //Keypad
 document.getElementById('keypad').addEventListener("click", function(event) {
-
     console.log(event.target.innerText);
     const number = event.target.innerText;
     const calcInput = document.getElementById('typed-numbers');
@@ -34,15 +33,15 @@ document.getElementById('keypad').addEventListener("click", function(event) {
 });
 
 //Verify pin
-
 function verifyPin() {
-    const genratedPin = document.getElementById('display-pin');
-    const typedPin = document.getElementById('typed-numbers');
+    const genratedPin = document.getElementById('display-pin').value;
+    const typedPin = document.getElementById('typed-numbers').value;
 
-    if (generatePin == typedPin) {
-        const failError = document.getElementById('notify-success');
-        failError.style.display = 'block';
+    if (genratedPin == typedPin) {
+        const successMessage = document.getElementById('notify-success');
+        successMessage.style.display = 'block';
     } else {
-
+        const failError = document.getElementById('notify-fail');
+        failError.style.display = 'block';
     }
 }
