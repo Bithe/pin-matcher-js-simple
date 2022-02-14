@@ -37,11 +37,15 @@ function verifyPin() {
     const genratedPin = document.getElementById('display-pin').value;
     const typedPin = document.getElementById('typed-numbers').value;
 
+    const successMessage = document.getElementById('notify-success');
+
+    const failError = document.getElementById('notify-fail');
+
     if (genratedPin == typedPin) {
-        const successMessage = document.getElementById('notify-success');
         successMessage.style.display = 'block';
+        failError.style.display = 'none';
     } else {
-        const failError = document.getElementById('notify-fail');
         failError.style.display = 'block';
+        successMessage.style.display = 'none';
     }
 }
